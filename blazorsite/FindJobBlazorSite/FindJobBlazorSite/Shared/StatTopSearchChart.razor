@@ -1,0 +1,53 @@
+﻿@inject WxCloudApi WxCloud
+<Bar @ref="chartInstance" TItem="StatTopSearch" Config="chartConfig" />
+
+@if (statData == null)
+{
+    <p>图表正在加载中...</p>
+}
+
+@code {
+    BarConfig chartConfig = new BarConfig
+    {
+        Height = 650,
+        Title = new Title
+        {
+            Visible = true,
+            Text = "FindJob 搜索关键词 Top10 排行榜"
+        },
+        Description = new Description
+        {
+            Visible = true,
+            Text = "本图表统计 FindJob 搜索次数最多的关键词",
+        },
+        ForceFit = true,
+        Padding = "auto",
+        XField = "count",
+        YField = "_id",
+        Meta = new
+        {
+            _id = new
+            {
+                Alias = "关键词"
+            },
+            count = new
+            {
+                Alias = "搜索次数"
+            }
+        },
+        Label = new BarViewConfigLabel
+        {
+            Visible = true,
+            Position = "left"
+        }
+    };
+
+    IChartComponent chartInstance = null;
+    IEnumerable<StatTopSearch> statData = null;
+
+    protected override async Task OnInitializedAsync()
+    {
+        statData = (await WxCloud.GetStatTopSearch()).OrderByDescending(p => p.Value);
+        await chartInstance.ChangeData(statData);
+    }
+}

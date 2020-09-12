@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>FindJob 统计</title>
+    <base href="/" />
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/app.css" rel="stylesheet" />
+</head>
+
+<body>
+    <app>
+        <div class="loader-box">
+            <img src="images/spinner.svg" width="70" />
+            <br />
+            <p id="loadingText" class="mt-3">Loading...</p>
+            <br />
+            <progress id="pbar"></progress>
+        </div>
+
+        <!-- Added to force fa load -->
+        <i style="visibility:hidden" class="fas fa-exclamation"></i>
+    </app>
+
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+    <script src="js/loader.js"></script>
+    <script>
+        startLoader(document.getElementById("pbar"), document.getElementById("loadingText"));
+    </script>
+    <script src="https://unpkg.com/@antv/g2plot@latest/dist/g2plot.js"></script>
+    <script src="_content/AntDesign.Charts/ant-design-charts-blazor.js"></script>
+    <script src="_framework/blazor.webassembly.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+﻿@inject WxCloudApi WxCloud
+<AntDesign.Charts.Line @ref="chartInstance" TItem="StatPv" Config="chartConfig" />
+
+@if (statPvData == null)
+{
+    <p>图表正在加载中...</p>
+}
+
+@code {
+    LineConfig chartConfig = new LineConfig
+    {
+        Height = 650,
+        Title = new Title
+        {
+            Visible = true,
+            Text = "FindJob 访问统计"
+        },
+        Description = new Description
+        {
+            Visible = true,
+            Text = "本图表统计30天内 FindJob 访问情况",
+        },
+        ForceFit = true,
+        Padding = "auto",
+        XField = "_id",
+        YField = "pv",
+        Meta = new
+        {
+            _id = new
+            {
+                Alias = "日期"
+            },
+            pv = new
+            {
+                Alias = "PV"
+            }
+        },
+        Label = new ColumnViewConfigLabel
+        {
+            Visible = true,
+            Style = new TextStyle
+            {
+                FontSize = 12,
+                FontWeight = 600,
+                Opacity = 60,
+            }
+        },
+        Interactions = new Interaction[]
+        {
+            new Interaction
+            {
+                Type = "slider",
+                Cfg = new
+                {
+                    start = 0,
+                    end = 1,
+                }
+            }
+        },
+        Smooth = true
+    };
+
+    IChartComponent chartInstance = null;
+    List<StatPv> statPvData = null;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var tempPv = (await WxCloud.GetStatPv()).ToDictionary<StatPv, DateTime, int>(p => DateTime.Parse(p.Date), p => p.Value);
+        var minDate = tempPv.Min(p => p.Key);
+        var maxDate = tempPv.Max(p => p.Key);
+        statPvData = new List<StatPv>();
+        while (minDate.Date <= maxDate.Date)
+        {
+            if (tempPv.ContainsKey(minDate))
+            {
+                statPvData.Add(new StatPv()
+                {
+                    Date = minDate.ToString("yyyy-MM-dd"),
+                    Value = tempPv[minDate]
+                });
+            }
+            else
+            {
+                statPvData.Add(new StatPv()
+                {
+                    Date = minDate.ToString("yyyy-MM-dd"),
+                    Value = 0
+                });
+            }
+            minDate = minDate.AddDays(1);
+        }
+        await chartInstance.ChangeData(statPvData);
+    }
+}

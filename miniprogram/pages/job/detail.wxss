@@ -1,0 +1,20 @@
+.job-detail-container {
+    position: relative;
+    padding-bottom: 100rpx;
+}
+
+.job-base-infol {
+    background: white;
+}
+
+.apply-job {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.company-intro {
+    line-height: 180%;
+}

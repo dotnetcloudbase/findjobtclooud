@@ -1,0 +1,47 @@
+<view class="bg-blue text-center">
+	<view class="my-bg padding-xl">
+		<block wx:if="{{isLogin}}">
+			<image class="cu-avatar xl round" src="{{userInfo.avatarUrl}}"></image>
+			<view class='text-center'>
+				<view class='text-xl text-white margin-top'>{{userInfo.nickName}}</view>
+			</view>
+		</block>
+		<block wx:if="{{!isLogin}}">
+			<image class="cu-avatar xl round" src="/images/ic_avatar.png"></image>
+			<view class='text-center flex flex-wrap justify-center'>
+				<button class='margin-top cu-btn round bg-green' open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">点击登录</button>
+			</view>
+		</block>
+
+	</view>
+</view>
+
+<view class="cu-list menu margin-top" wx:if="{{isLogin}}">
+	<navigator url="/pages/my/favorites" class="cu-item arrow">
+		<view class='content'>
+			<text class='cuIcon-favorfill text-orange'></text>
+			<text class='text-black'>我的收藏</text>
+		</view>
+	</navigator>
+</view>
+
+<view class="cu-list menu margin-top">
+	<view class="cu-item">
+		<button class='cu-btn content' open-type='contact'>
+			<text class='cuIcon-servicefill text-yellow'></text>
+			<text class='text-black'>联系客服</text>
+		</button>
+	</view>
+	<view class="cu-item">
+		<button class='cu-btn content' open-type='feedback'>
+			<text class='cuIcon-communityfill text-mauve'></text>
+			<text class='text-black'>意见反馈</text>
+		</button>
+	</view>
+	<navigator url="/pages/my/about" class="cu-item arrow">
+		<view class='content'>
+			<text class='cuIcon-infofill text-blue'></text>
+			<text class='text-black'>关于小程序</text>
+		</view>
+	</navigator>
+</view>

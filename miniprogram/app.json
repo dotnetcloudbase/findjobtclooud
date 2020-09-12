@@ -1,0 +1,41 @@
+{
+    "pages": [
+        "pages/job/index",
+        "pages/job/detail",
+        "pages/my/my",
+        "pages/my/favorites",
+        "pages/my/about"
+    ],
+    "window": {
+        "backgroundColor": "#F6F6F6",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#0081ff",
+        "navigationBarTitleText": "Find Job",
+        "navigationBarTextStyle": "white"
+    },
+    "tabBar": {
+        "color": "#999999",
+        "selectedColor": "#0081ff",
+        "list": [
+            {
+                "pagePath": "pages/job/index",
+                "text": "职位",
+                "iconPath": "images/ic_job_gray.png",
+                "selectedIconPath": "images/ic_job.png"
+            },
+            {
+                "pagePath": "pages/my/my",
+                "text": "我的",
+                "iconPath": "images/ic_my_gray.png",
+                "selectedIconPath": "images/ic_my.png"
+            }
+        ]
+    },
+    "sitemapLocation": "sitemap.json",
+    "style": "v2",
+    "permission": {
+        "scope.userLocation": {
+            "desc": "你的位置信息将用于定位当前城市"
+        }
+    }
+}

@@ -1,0 +1,75 @@
+<view class="bg-blue padding-xl">
+	<text class="block text-white text-center text-xxl">快速找工作</text>
+	<view class="cu-bar search margin-top">
+		<view class="search-form round">
+			<text class="cuIcon-search"></text>
+			<input value="{{keywords}}" type="text" placeholder="输入关键词搜索职位" confirm-type="search" bindinput="onInputKeywords" bindconfirm="doSearch"></input>
+		</view>
+	</view>
+</view>
+<view class="shadow filter-container {{filterScrollTop>140 ? 'top' : ''}}">
+	<view class="cu-bar shadow justify-between bg-white select-area">
+		<view class="text-center text" bindtap="onToggleAreaPicker">
+			<text class="cuIcon-locationfill"></text>
+			<text class="text-cut padding-right-sm" wx:if="{{selectedCity}}"> {{selectedCity}}</text>
+			<text class="text-cut padding-right-sm" wx:if="{{!selectedCity}}"> 北京市</text>
+			<text class="cuIcon-triangledownfill" wx:if="{{!showAreaPicker}}"></text>
+			<text class="cuIcon-triangleupfill" wx:if="{{showAreaPicker}}"></text>
+		</view>
+		<view class="text-center text" bindtap="onToggleSitePicker">
+			<text class="cuIcon-circlefill"></text>
+			<text class="text-cut padding-right-sm" wx:if="{{selectedSite}}"> {{selectedSite}}</text>
+			<text class="text-cut padding-right-sm" wx:if="{{!selectedSite}}"> 来源不限</text>
+			<text class="cuIcon-triangledownfill" wx:if="{{!showSitePicker}}"></text>
+			<text class="cuIcon-triangleupfill" wx:if="{{showSitePicker}}"></text>
+		</view>
+	</view>
+	<view class="picker" wx:if="{{showAreaPicker}}">
+		<picker-view indicator-style="height: 50px;" style="width: 100%; height: 200px;" value="{{[0]}}" bindchange="onAreaChanged">
+			<picker-view-column>
+				<view wx:for="{{citys}}" wx:key="item" style="line-height: 50px; text-align: center;">{{item}}</view>
+			</picker-view-column>
+		</picker-view>
+		<view class="cu-bar bg-white flex justify-around picker-button-area">
+			<button class="cu-btn bg-green" bindtap="onGetCurrentCity"><text class="cuIcon-locationfill"></text> 定位</button>
+			<button class="cu-btn" bindtap="onResetAreaPicker">重置</button>
+			<button class="cu-btn bg-blue" bindtap="onConfirmArea">确认</button>
+		</view>
+	</view>
+	<view class="picker" wx:if="{{showSitePicker}}">
+		<picker-view indicator-style="height: 50px;" style="width: 100%; height: 200px;" value="{{[0]}}" bindchange="onSiteChanged">
+			<picker-view-column>
+				<view class="flex flex justify-center" wx:for="{{sites}}" wx:key="name" style="line-height: 50px; text-align: center;">
+					<image class="picker-site-logo" mode="aspectFit" wx:if="{{item.logo}}" src="../../images/{{item.logo}}"></image>
+					<view wx:if="{{!item.logo}}">{{item.name}}</view>
+				</view>
+			</picker-view-column>
+		</picker-view>
+		<view class="cu-bar bg-white justify-around picker-button-area">
+			<button class="cu-btn" bindtap="onResetSitePicker">重置</button>
+			<button class="cu-btn bg-blue" bindtap="onConfirmSite">确认</button>
+		</view>
+	</view>
+</view>
+
+<view class="job-list" wx:if="{{jobList.length>0}}">
+	<view bindtap="onViewJobDetail" data-data="{{item}}" class="flex padding bg-white align-center" style="border-bottom: 1px solid #dedede" wx:for="{{jobList}}" wx:key="index">
+		<view class="flex-sub job-detail">
+			<view class="flex justify-between align-center">
+				<text class="title text-cut text-black text-xl" style="max-width: 500rpx">{{item.jobTitle}}</text>
+				<text class="salary text-cut text-orange text-bold">{{item.salary}}</text>
+			</view>
+			<view class="margin-top-sm text-darkgray">{{item.jobCompany}}</view>
+			<view class="margin-top-sm text-gray flex justify-between align-center">
+				<view class="flex align-center">
+					<image mode="aspectFill" src="{{item.logo}}" mode="aspectFit" style="height: 15px; max-width: 50px"></image> | {{item.area}}
+				</view>
+				<text>{{item.time}}</text>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="empty-view text-center" wx:else>
+	<image class="empty-icon" src="../../images/ic_empty.png" mode="aspectFit"></image>
+	<text class="margin-top-xl text-df text-darkgray">输入关键词搜索职位</text>
+</view>

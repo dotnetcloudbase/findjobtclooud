@@ -1,0 +1,46 @@
+<view class="job-detail-container">
+	<view class="job-base-info padding bg-white">
+		<text class="text-xl text-bold block">{{jobDetail.jobTitle}}</text>
+		<text class="text-lg text-orange text-bold margin-top block">{{jobDetail.salary}}</text>
+		<text class="text-lg text-darkgray margin-top block">{{jobDetail.area}} | {{jobDetail.industry}}</text>
+	</view>
+
+	<view class="cu-bar bg-white margin-top-sm solid-bottom">
+		<view class="action">
+			<text class="cuIcon-titles text-blue"></text>
+			<text class="text text-bold">公司简介</text>
+		</view>
+	</view>
+	<view class="padding bg-white">
+		<text class="company-intro text-lg text-darkgray block">{{jobDetail.companySize}}</text>
+		<text class="company-intro text-lg text-darkgray block">{{jobDetail.companyIntroduction}}</text>
+	</view>
+	<view class="cu-bar bg-white margin-top-sm solid-bottom">
+		<view class="action">
+			<text class="cuIcon-titles text-blue"></text>
+			<text class="text text-bold">职位要求</text>
+		</view>
+	</view>
+	<view class="padding bg-white">
+		<text class="text-lg text-darkgray block">学历：{{jobDetail.education}}</text>
+		<text class="text-lg text-darkgray block">经验：{{jobDetail.experience}}</text>
+		<text class="company-intro text-lg block">{{jobDetail.requirement}}</text>
+	</view>
+	<view class="cu-bar bg-white tabbar border apply-job solid-top">
+		<button class="action bg-none" open-type="share">
+			<view class="cuIcon-share"></view>
+			分享
+		</button>
+		<button class="action bg-none" bindtap="onSaveFavorite">
+			<block wx:if="{{!isFavorite}}">
+				<view class="cuIcon-favor"></view>
+				<text>收藏</text>
+			</block>
+			<block wx:if="{{isFavorite}}">
+				<view class="cuIcon-favorfill text-orange"></view>
+				<text class="text-orange">已收藏</text>
+			</block>
+		</button>
+		<view class="bg-blue submit" bindtap="onApplyJob">申请职位</view>
+	</view>
+</view>

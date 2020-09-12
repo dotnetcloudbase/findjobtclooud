@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AngleSharp" Version="0.14.0" />
+    <PackageReference Include="EasyCaching.InMemory" Version="0.8.10" />
+    <PackageReference Include="EasyCaching.Redis" Version="0.8.10" />
+    <PackageReference Include="EasyCaching.Serialization.Json" Version="0.8.10" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.7" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="EasyCaching.Core" Version="0.8.10" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="4.7.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LBS.Amap.SDK\LBS.Amap.SDK.csproj" />
+    <ProjectReference Include="..\Yhd.TencentCloud.SCF\Yhd.TencentCloud.SCF.csproj" />
+  </ItemGroup>
+
+</Project>

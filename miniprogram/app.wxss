@@ -1,0 +1,99 @@
+@import "colorui/main.wxss";
+@import "colorui/icon.wxss";
+
+.text-darkgray {
+	color: var(--darkGray);
+}
+
+.bg-none {
+	background: none
+}
+
+.select-area view {
+	width: 48%;
+	height: 70rpx;
+	line-height: 70rpx;
+	display: block;
+}
+
+.select-area view:first-child {
+	border-right: 1px solid #ededed;
+}
+
+.picker-site-logo {
+	width: 80px;
+	height: 40px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin-top: 5px;
+}
+
+.picker-button-area {
+	padding-left: 20rpx;
+	padding-right: 20rpx;
+}
+
+.picker-button-area button+button {
+	margin-left: 20rpx;
+}
+
+.empty-view {
+	padding: 50rpx;
+}
+
+.empty-view .empty-icon {
+	width: 300rpx;
+	height: 300rpx;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.empty-view .empty-icon {
+	display: block;
+	width: 300rpx;
+	height: 300rpx;
+}
+
+.job-list {
+	width: 100% !important;
+	overflow: hidden;
+}
+
+.filter-container {
+	position: relative;
+}
+
+.filter-container.top {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 999;
+}
+
+.filter-container .picker {
+	background: white;
+	position: absolute;
+	width: 100%;
+	height: 200px;
+	top: 100rpx;
+	z-index: 1000;
+	border-bottom: 1px solid #dddddd;
+}
+
+.echart-container {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+  
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+	box-sizing: border-box;
+
+	padding-top: 15px;
+	padding-bottom: 15px;
+  } 

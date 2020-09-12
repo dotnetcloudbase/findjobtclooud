@@ -1,0 +1,22 @@
+<view class="job-list" wx:if="{{jobList.length>0}}">
+	<view bindtap="onViewJobDetail" catchlongtap="onDeleteFavorite" data-data="{{item}}" class="flex padding bg-white align-center" style="border-bottom: 1px solid #dedede" wx:for="{{jobList}}" wx:key="index">
+		<view class="flex-sub job-detail">
+			<view class="flex justify-between align-center">
+				<text class="title text-cut text-black text-xl" style="max-width: 500rpx">{{item.jobTitle}}</text>
+				<text class="salary text-cut text-orange text-bold">{{item.salary}}</text>
+			</view>
+			<view class="margin-top-sm text-darkgray">{{item.jobCompany}}</view>
+			<view class="margin-top-sm text-gray flex justify-between align-center">
+				<view class="flex align-center">
+					<image mode="aspectFill" src="{{item.logo}}" mode="aspectFit" style="height: 15px; max-width: 50px"></image> | {{item.area}}
+				</view>
+				<text>{{item.time}}</text>
+			</view>
+		</view>
+	</view>
+    <text class='block text-gray text-center margin-top'>—— 长按删除收藏记录 ——</text>
+</view>
+<view class="empty-view text-center margin-top-xl" wx:else>
+	<image class="empty-icon" src="../../images/ic_empty.png" mode="aspectFit"></image>
+	<text class="margin-top-xl text-df text-darkgray">暂无收藏职位</text>
+</view>

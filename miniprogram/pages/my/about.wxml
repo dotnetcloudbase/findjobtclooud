@@ -1,0 +1,8 @@
+<view class='margin-xl bg-white padding radius shadow-lg'>
+    <view class='text-content'>
+        <view class="text-xl bold text-grey">关于</view>
+        <view class='margin-top-sm'>《Find Job》是2020年8月份腾讯公司举办的云开发赛事参赛作品。</view>
+        <view class="text-xl bold margin-top text-grey padding-top solid-top">开源地址</view>
+        <view>Github：https://github.com/dotnetcloudbase/findjob</view>
+    </view>
+</view>

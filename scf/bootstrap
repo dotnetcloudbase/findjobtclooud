@@ -1,0 +1,6 @@
+#!/bin/sh
+echo "Start dotnet bootstrap ~~~"
+export DOTNET_ROOT=/opt/rt
+export PATH=$(pwd):/opt/rt:${PATH}
+dotnet ./index/bin/Release/netcoreapp3.1/index.dll
+
