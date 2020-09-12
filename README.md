@@ -13,12 +13,12 @@
 ### 功能架构
 
 项目 功能上由小程序 和运营网站构成， 用户使用微信小程序快速找工具，相关的运营数据保存在云开发的云存储中，通过运营网站进行展示。
-![功能架构](https://github.com/dotnetcloudbase/findjobtclooud/tree/master/resources/funcarch.png)
+![功能架构](https://github.com/dotnetcloudbase/findjobtclooud/blob/master/resources/funcarch.png)
 
 ### 系统架构
 
 本项目以云开发为核心，主要包括：云函数，云数据库，云存储，和HTTP API（SCF云函数）和 .NET SCF Custom Runtime 五个部分。除了云开发外，还有小程序端，运营系统，第三方服务器等部分。
-![系统架构](https://github.com/dotnetcloudbase/findjobtclooud/tree/master/resources/softarch.png)
+![系统架构](https://github.com/dotnetcloudbase/findjobtclooud/blob/master/resources/softarch.png)
 
 ## 4. 体验二维码
 
