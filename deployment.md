@@ -37,10 +37,15 @@ npm install --save tcb-router
 
 ##  部署腾讯云SCF云函数
 
+SCF 云函数的部署参见[在腾讯云云函数计算上部署.NET Core 3.1](https://www.cnblogs.com/shanyou/p/scf-dotnet-customruntime.html)
 ##  部署Api网关
+
+云函数通过API网关发布，具体发布文档参见[api网关和云函数](https://docs.qq.com/doc/DWHJ5VnNuWmFYcEV0?pub=1&dver=2.1.0)
 
 ##  运行小程序项目
 
 点击编译，运行项目。
 
 ##  部署运营网站
+
+运营网站的部署参见 [腾讯云 云开发 部署 Blazor网站](https://www.cnblogs.com/shanyou/p/13645172.html)
