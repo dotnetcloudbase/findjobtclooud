@@ -41,9 +41,9 @@
 小程序二维码
 ![小程序二维码](/resources/findjobqrcode.jpg)
 
-运营网站体验地址：
+运营网站体验地址：https://findjob-1gcto7ln453287ca-1257277642.tcloudbaseapp.com/ 
 
-## 5. 部署指南 https://findjob-1gcto7ln453287ca-1257277642.tcloudbaseapp.com/
+## 5. 部署指南 
 
 部署参考文档 [deployment.d](deployment.md)
 
