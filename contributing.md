@@ -67,9 +67,9 @@ PR 提交后，作者会进行 Review ，个别项目还会自动触发一些自
 
 非常感谢以下几位贡献者对findjob做出的贡献：
 
-[geffzhang](https://github.com/orgs/dotnetcloudbase/people/geffzhang)
+[geffzhang](https://github.com/geffzhang)
 
-[mrhuo](https://github.com/orgs/dotnetcloudbase/people/mrhuo)
+[mrhuo](https://github.com/mrhuo)
 
 ## 参与贡献
 
