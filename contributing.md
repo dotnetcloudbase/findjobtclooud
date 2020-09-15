@@ -8,7 +8,7 @@
 简单的咨询，如询问如何使用、询问示例是如何实现的或其他和 Findjob 无关的技术问题，请在官方 QQ 群中询问，效率更高。
 
 ## 关于 issue
-Finjob 的发展，离不开社区的贡献。如果你对 FindJob 的现状有意见、建议或者发现了 bug，欢迎通过 issue 给我们提出。提 issue 之前，请阅读以下指引。
+Findjob 的发展，离不开社区的贡献。如果你对 FindJob 的现状有意见、建议或者发现了 bug，欢迎通过 issue 给我们提出。提 issue 之前，请阅读以下指引。
 
 - 搜索以往的 issue ，看是否已经提过，避免重复提出；
 - 请确认你遇到的问题，是否在最新版本已被修复；
@@ -66,6 +66,10 @@ PR 提交后，作者会进行 Review ，个别项目还会自动触发一些自
 ## 贡献者名单
 
 非常感谢以下几位贡献者对findjob做出的贡献：
+
+[geffzhang](https://github.com/orgs/dotnetcloudbase/people/geffzhang)
+
+[mrhuo](https://github.com/orgs/dotnetcloudbase/people/mrhuo)
 
 ## 参与贡献
 
